@@ -1,0 +1,95 @@
+
+<!-- saved from url=(0084)https://www.cs.drexel.edu/~introcs/Fa15/labs/L7-conds_FP/sampleFormVerification.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>CS 164 Form Field Verification Example</title>
+	<script type="text/javascript">
+	<!--
+	function ErrorCheck (){
+	if (document.getElementById('lastName').value === ""){
+    {
+	errorAlert("last Name");
+    }
+	}
+	if (document.getElementById('firstName').value === ""){
+    {
+	errorAlert("First Name");
+    }
+	}
+	var email = document.getElementById('email').value;
+	if (email.indexOf('@') == "-1"){
+    {
+	errorAlert("email");
+    }
+	}
+	var dob = document.getElementById('dob').value;
+	if(dob.indexOf("/") !=2 || dob.indexOf("/", 4) !=5 || dob.length !=10)
+	{errorAlert("date of birth")
+	}
+	}
+</script>
+	<script type="text/javascript">
+	function errorAlert(lineNo){
+	 alert(lineNo + ' cannot be blank!');}
+	</script>
+	
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="8" bgcolor="#000066">
+  <tbody><tr> 
+    <td><h1><font color="#FFCC66">Form Field Verifier</font> </h1></td>
+  </tr>
+</tbody></table>
+<p><i>You are to modify this form so that the values submitted by the user are 
+  verified for correctness.</i></p>
+<table border="0" cellpadding="8" bordercolor="#CC0000" bgcolor="#FFCC66">
+  <tbody><tr> 
+    <td> <form name="userdata">
+        <p>&nbsp;</p>
+        <p><b>First Name: </b> 
+          <input name="firstName" id="firstName" type="text" size="35">
+          <b>Middle Initial:</b> 
+          <input name="middleInitial" id="middleInitial" type="text" size="5" maxlength="1">
+          <b>Last Name:</b> 
+          <input name="lastName" id="lastName" type="text" size="35">
+        </p>
+        <p><b>Email Address: </b> 
+          <input name="emailAddress" id="email" type="text" size="80">
+        </p>
+        <p><b>Date of Birth:</b> 
+          <input type="text" id="dob" name="dateOfBirth">
+        </p>
+        <p> 
+          <input type="button" value="Submit" onclick="ErrorCheck()"">
+          <input type="reset" name="reset" value="Reset">
+        </p>
+        <p>&nbsp;</p>
+        <p><b>DEBUGGING:</b> 
+          <textarea name="DebuggingArea" cols="80" rows="10"></textarea>
+        </p>
+        <p>&nbsp; </p>
+      </form></td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<p><b>Notes:</b> </p>
+<p>Use the <b>DEBUGGING</b> area to view values as follows:</p>
+<table border="1" cellpadding="10" cellspacing="0" bordercolor="#000066" bgcolor="#FFFF99">
+  <tbody><tr> 
+    <td>
+<pre>function check(form)
+{
+  var str = form.lastName.value
+
+  var result =    "str=" + str + "\n"
+                + "str.substring(5,7)=" + str.substring(5,7) + "\n"
+
+  form.DebuggingArea.value = result
+}</pre>
+
+	</td>
+  </tr>
+</tbody></table>
+
+
+</body></html>
